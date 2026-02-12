@@ -1,7 +1,7 @@
 import Toybox.WatchUi;
 import Toybox.Graphics;
 import Toybox.Lang;
-using Toybox.System;
+import Toybox.System;
 
 class firstProjectView extends WatchUi.View {
   var _qrMatrix;
@@ -10,7 +10,7 @@ class firstProjectView extends WatchUi.View {
     System.println("Hello Monkey C!");
 
     View.initialize();
-    
+
     var data = "773 100 073 684 704 120";
     _qrMatrix = SimpleQR.generate(data);
     System.println("Generated QR matrix for data: " + data);
@@ -57,5 +57,6 @@ class firstProjectView extends WatchUi.View {
         }
       }
     }
+    
   }
 }
