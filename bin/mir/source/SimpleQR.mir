@@ -1,0 +1,149 @@
+[ @file = "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc"; @line = 5; @symbol_moduledef = [SimpleQR,5,7,15]; ]
+module SimpleQR {
+    [ @file = "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc"; @line = 6; @symbol_functiondef = [generate,6,11,19]; @symbol_param<0> = [data,6,20,24]; @symbol_param<0>_type<0> = [String,6,28,34]; @symbol_return<0> = [Array,6,39,44]; @symbol_return<1> = [Array,6,45,50]; @symbol_return<2> = [Number,6,51,57]; ]
+    function generate(data as String) as Array<Array<Number>> {
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_6_60_24_2_start:
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 10 4 ]
+        [ "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_6_60_24_2_start" "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_6_60_24_2_stop" ]
+        %size.1 = local;
+        symbol [ size %size.1 10 8 12 ];
+        %tmp.1 = 21;
+        lputv %size.1 %tmp.1;
+        symbol [ size %size.1 10 8 12 ];
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 11 4 ]
+        [ "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_6_60_24_2_start" "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_6_60_24_2_stop" ]
+        %matrix.2 = local;
+        symbol [ matrix %matrix.2 11 8 14 ];
+        %tmp.2 = newa 0;
+        lputv %matrix.2 %tmp.2;
+        symbol [ matrix %matrix.2 11 8 14 ];
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 13 4 ]
+        for @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_test @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_incr @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_end;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_init:
+        [ "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_begin" "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_end" ]
+        %y.3 = local;
+        symbol [ y %y.3 13 13 14 ];
+        %tmp.3 = 0;
+        lputv %y.3 %tmp.3;
+        symbol [ y %y.3 13 13 14 ];
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_test:
+        %tmp.4 = lgetv %y.3;
+        symbol [ y %tmp.4 13 20 21 ];
+        %tmp.5 = lgetv %size.1;
+        symbol [ size %tmp.5 13 24 28 ];
+        %tmp.6 = lt %tmp.4 %tmp.5;
+        bf %tmp.6 @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_end;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_begin:
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_35_21_4_start:
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 14 6 ]
+        [ "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_35_21_4_start" "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_35_21_4_stop" ]
+        %row.4 = local;
+        symbol [ row %row.4 14 10 13 ];
+        %tmp.7 = newa 0;
+        lputv %row.4 %tmp.7;
+        symbol [ row %row.4 14 10 13 ];
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 15 6 ]
+        for @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_test @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_incr @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_end;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_init:
+        [ "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_begin" "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_end" ]
+        %x.5 = local;
+        symbol [ x %x.5 15 15 16 ];
+        %tmp.8 = 0;
+        lputv %x.5 %tmp.8;
+        symbol [ x %x.5 15 15 16 ];
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_test:
+        %tmp.9 = lgetv %x.5;
+        symbol [ x %tmp.9 15 22 23 ];
+        %tmp.10 = lgetv %size.1;
+        symbol [ size %tmp.10 15 26 30 ];
+        %tmp.11 = lt %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_end;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_begin:
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_37_19_6_start:
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 17 8 ]
+        [ "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_37_19_6_start" "C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_37_19_6_stop" ]
+        %val.6 = local;
+        symbol [ val %val.6 17 12 15 ];
+        %tmp.12 = lgetv %x.5;
+        symbol [ x %tmp.12 17 19 20 ];
+        %tmp.13 = lgetv %y.3;
+        symbol [ y %tmp.13 17 23 24 ];
+        %tmp.14 = mul %tmp.12 %tmp.13;
+        %tmp.15 = lgetv %data;
+        symbol [ data %tmp.15 17 27 31 ];
+        symbol [ hashCode %tmp.16 17 32 40 ];
+        %tmp.16 = getv function %tmp.15 :hashCode;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        %tmp.18 = add %tmp.14 %tmp.17;
+        %tmp.19 = 2;
+        %tmp.20 = mod %tmp.18 %tmp.19;
+        lputv %val.6 %tmp.20;
+        symbol [ val %val.6 17 12 15 ];
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 18 8 ]
+        %tmp.21 = lgetv %row.4;
+        symbol [ row %tmp.21 18 8 11 ];
+        symbol [ add %tmp.22 18 12 15 ];
+        %tmp.22 = getv function %tmp.21 :add;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_begin:
+        %tmp.23 = lgetv %val.6;
+        symbol [ val %tmp.23 18 16 19 ];
+        %tmp.24 = 0;
+        %tmp.25 = eq %tmp.23 %tmp.24;
+        bf %tmp.25 @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_else_false;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_true:
+        %tmp.26 = 1;
+        push %tmp.26;
+        goto @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_end;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_else_false:
+        %tmp.27 = 0;
+        push %tmp.27;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_end:
+        %tmp.28 = phi [%tmp.25 @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_begin] [%tmp.26 @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_true] [%tmp.27 @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_else_false] [%tmp.28 @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_18_16_18_31_end];
+        invoke %tmp.21 %tmp.22(%tmp.28);
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_37_19_6_stop:
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_incr:
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 15 ]
+        %tmp.31 = lgetv %x.5;
+        symbol [ x %tmp.31 15 32 33 ];
+        %tmp.32 = add %tmp.31 1;
+        lputv %x.5 %tmp.32;
+        symbol [ x %x.5 15 32 33 ];
+        goto @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_test;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_15_6_19_6_for_end:
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 20 6 ]
+        %tmp.33 = lgetv %matrix.2;
+        symbol [ matrix %tmp.33 20 6 12 ];
+        symbol [ add %tmp.34 20 13 16 ];
+        %tmp.34 = getv function %tmp.33 :add;
+        %tmp.35 = lgetv %row.4;
+        symbol [ row %tmp.35 20 17 20 ];
+        invoke %tmp.33 %tmp.34(%tmp.35);
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_35_21_4_stop:
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_incr:
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 13 ]
+        %tmp.38 = lgetv %y.3;
+        symbol [ y %tmp.38 13 30 31 ];
+        %tmp.39 = add %tmp.38 1;
+        lputv %y.3 %tmp.39;
+        symbol [ y %y.3 13 30 31 ];
+        goto @C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_test;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_13_4_21_4_for_end:
+[ "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc" 23 4 ]
+        %tmp.40 = lgetv %matrix.2;
+        symbol [ matrix %tmp.40 23 11 17 ];
+        ret %tmp.40;
+C__Users_thijs_content_projects_garmin_firstProject_source_SimpleQR_mc_6_60_24_2_stop:
+    }
+}
+[ @file = "C:\Users\thijs\content\projects\garmin\firstProject\source\SimpleQR.mc"; @line = 1; ]
+<init> {
+}
