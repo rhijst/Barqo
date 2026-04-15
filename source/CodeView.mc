@@ -10,17 +10,21 @@ class CodeView extends WatchUi.View {
         View.initialize();
 
         _codes = [
-            // { :type => "qr", :data => "773100073684704120" },
+            { :type => "qr", :data => "773100073684704120" },
             { :type => "barcode", :data => "773100073684704120" },
         ];
     }
 
-    function onLayout(dc as Dc) as Void {
-        // setLayout(WatchUi.Layout());
-        // setLayout(Rez.Layouts.MainLayout(dc));
+    function nextCode() {
+        _currentIndex = (_currentIndex + 1) % _codes.size();
+        WatchUi.requestUpdate();
     }
 
     function onUpdate(dc as Dc) as Void {
+        // Clear screen
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
+        dc.clear();
+
         // ' Draw a black filled rectangle (a square)
         dc.fillRectangle(100, 100, 100, 100); // ' x, y, width, height
 
@@ -32,6 +36,7 @@ class CodeView extends WatchUi.View {
         var code = _codes[_currentIndex];
 
         System.println("Current code type: " + code[:type]);
+
         if (code[:type].equals("qr")) {
             drawQRCode(dc, 10, 10, dc.getWidth() - 200, code[:data]);
         } else if (code[:type].equals("barcode")) {
@@ -44,12 +49,6 @@ class CodeView extends WatchUi.View {
                 code[:data]
             );
         }
-    }
-
-    function onMenu() as Boolean {
-        _currentIndex = (_currentIndex + 1) % _codes.size();
-        WatchUi.requestUpdate();
-        return true;
     }
 
     function drawQRCode(

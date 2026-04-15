@@ -19,7 +19,8 @@ class firstProjectApp extends Application.AppBase {
     // }
 
     function getInitialView() as [Views] or [Views, InputDelegates] {
-        return [new CodeView(), new firstProjectDelegate()];
+        var view = new CodeView();
+        return [view, new CodeDelegate(view)];
     }
 }
 
