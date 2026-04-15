@@ -4,15 +4,16 @@ import Toybox.Lang;
 
 class CodeView extends WatchUi.View {
     var _currentIndex = 0;
-    var _codes;
+    var _codes as Array<Dictionary>;
 
     function initialize() {
         View.initialize();
 
-        _codes = [
-            { :type => "qr", :data => "773100073684704120" },
-            { :type => "barcode", :data => "773100073684704120" },
-        ];
+        _codes =
+            [
+                { :type => "qr", :data => "773100073684704120" },
+                { :type => "barcode", :data => "773100073684704120" },
+            ] as Array<Dictionary>;
     }
 
     function nextCode() {
@@ -68,7 +69,6 @@ class CodeView extends WatchUi.View {
             [0, 1, 0, 1, 0, 1, 0],
             [1, 0, 1, 0, 1, 0, 1],
         ];
-        System.println("testing");
 
         var cellSize = size / matrix.size();
 

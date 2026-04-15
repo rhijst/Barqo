@@ -3,7 +3,7 @@ import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.System;
 
-class firstProjectView extends WatchUi.View {
+class barqoView extends WatchUi.View {
   var _qrMatrix;
 
   function initialize() {

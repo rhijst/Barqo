@@ -2,7 +2,7 @@ import Toybox.Application;
 import Toybox.Lang;
 import Toybox.WatchUi;
 
-class firstProjectApp extends Application.AppBase {
+class BarqoApp extends Application.AppBase {
     function initialize() {
         AppBase.initialize();
     }
@@ -15,7 +15,7 @@ class firstProjectApp extends Application.AppBase {
 
     // Return the initial view of your application here
     // function getInitialView() as [Views] or [Views, InputDelegates] {
-    //     return [ new firstProjectView(), new firstProjectDelegate() ];
+    //     return [ new barqoView(), new barqoDelegate() ];
     // }
 
     function getInitialView() as [Views] or [Views, InputDelegates] {
@@ -24,6 +24,6 @@ class firstProjectApp extends Application.AppBase {
     }
 }
 
-function getApp() as firstProjectApp {
-    return Application.getApp() as firstProjectApp;
+function getApp() as BarqoApp {
+    return Application.getApp() as BarqoApp;
 }
