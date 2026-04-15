@@ -7,18 +7,14 @@ class BarqoApp extends Application.AppBase {
         AppBase.initialize();
     }
 
-    // onStart() is called on application start up
+    // Is called on application start up
     function onStart(state as Dictionary?) as Void {}
 
-    // onStop() is called when your application is exiting
+    // Is called when the application is exiting
     function onStop(state as Dictionary?) as Void {}
 
-    // Return the initial view of your application here
-    // function getInitialView() as [Views] or [Views, InputDelegates] {
-    //     return [ new barqoView(), new barqoDelegate() ];
-    // }
-
-    function getInitialView() {
+    // Returning the initial 
+    function getInitialView() as [Views] or [Views, InputDelegates] {
         var view = new HomeView();
         return [view, new HomeDelegate(view)];
     }
