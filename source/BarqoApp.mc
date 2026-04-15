@@ -18,9 +18,9 @@ class BarqoApp extends Application.AppBase {
     //     return [ new barqoView(), new barqoDelegate() ];
     // }
 
-    function getInitialView() as [Views] or [Views, InputDelegates] {
-        var view = new CodeView();
-        return [view, new CodeDelegate(view)];
+    function getInitialView() {
+        var view = new HomeView();
+        return [view, new HomeDelegate(view)];
     }
 }
 

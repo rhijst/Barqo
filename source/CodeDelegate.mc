@@ -11,16 +11,20 @@ class CodeDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onSelect() {
-        view.nextCode();
+        view.toggleMode();
         return true;
     }
 
     function onSwipe(swipeEvent) {
         var direction = swipeEvent.getDirection();
         if (direction == WatchUi.SWIPE_LEFT) {
-            System.println(view.nextCode());
+            view.toggleMode();
         } else if (direction == WatchUi.SWIPE_RIGHT) {
-            WatchUi.popView(view);
+            WatchUi.popView(WatchUi.SLIDE_RIGHT);
+        } else if (direction == WatchUi.SWIPE_UP) {
+            view.toggleMode();
+        } else if (direction == WatchUi.SWIPE_DOWN) {
+            view.toggleMode();
         }
         WatchUi.requestUpdate();
         return true;

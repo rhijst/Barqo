@@ -3,21 +3,20 @@ import Toybox.Graphics;
 import Toybox.Lang;
 
 class CodeView extends WatchUi.View {
-    var _currentIndex = 0;
-    var _codes as Array<Dictionary>;
+    var _card;
+    var _mode = "qr";
 
-    function initialize() {
+    function initialize(card) {
         View.initialize();
-
-        _codes =
-            [
-                { :type => "qr", :data => "773100073684704120" },
-                { :type => "barcode", :data => "773100073684704120" },
-            ] as Array<Dictionary>;
+        _card = card;
     }
 
-    function nextCode() {
-        _currentIndex = (_currentIndex + 1) % _codes.size();
+    function toggleMode() {
+        if (_mode.equals("qr")) {
+            _mode = "barcode";
+        } else {
+            _mode = "qr";
+        }
         WatchUi.requestUpdate();
     }
 
@@ -34,20 +33,18 @@ class CodeView extends WatchUi.View {
         // Draw QR or barcode in black
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
 
-        var code = _codes[_currentIndex];
+        System.println("Current code type: " + _card[:code]);
 
-        System.println("Current code type: " + code[:type]);
-
-        if (code[:type].equals("qr")) {
-            drawQRCode(dc, 10, 10, dc.getWidth() - 200, code[:data]);
-        } else if (code[:type].equals("barcode")) {
+        if (_mode.equals("qr")) {
+            drawQRCode(dc, 10, 10, dc.getWidth() - 20, _card[:data]);
+        } else {
             drawBarcode(
                 dc,
                 10,
                 dc.getHeight() / 2 - 20,
                 dc.getWidth() - 20,
                 40,
-                code[:data]
+                _card[:data]
             );
         }
     }
