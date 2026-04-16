@@ -27,13 +27,7 @@ class BarcodeMode128 {
         }
 
         // CHECKSUM
-        var checksum = 104; // start value
-
-        for (var i = 0; i < _data.length(); i++) {
-            checksum += charToCode128(_data.substring(i, i + 1)) * (i + 1);
-        }
-
-        checksum = checksum % 103;
+        var checksum = createChecksum();
         codes.add(checksum);
 
         // STOP = 106
@@ -52,25 +46,36 @@ class BarcodeMode128 {
     function display(dc as Dc) {
         var screenW = dc.getWidth();
         var screenH = dc.getHeight();
+        var quietZoneUnits = 40;
 
-        var quietZoneUnits = 20;
-
-        // --- 1. Calculate total units (barcode + quiet zones)
-        var totalUnits = quietZoneUnits * 2;
+        // --- 1. Calculate total units
+        var totalUnits = 0;
 
         for (var i = 0; i < _pattern.size(); i++) {
             totalUnits += _pattern[i];
         }
 
-        // --- 2. Decide largest unit width
+        if (totalUnits == 0) {
+            System.println("No data to display");
+            return;
+        }
+
+        // To much information to display
+        if (totalUnits > screenW - quietZoneUnits) {
+            System.println("Data too long to display");
+            return;
+        }
+
+        // --- 2. Decide largest unit width, max 4
         var unitWidth = screenW / totalUnits;
 
         // --- 3. Barcode height
         var barHeight = (screenH * 0.6).toNumber();
         var y = (screenH - barHeight) / 2;
 
-        // --- 4. Start X
-        var x = quietZoneUnits * unitWidth;
+        // --- 4. Start X (centered)
+        var totalWidth = totalUnits * unitWidth;
+        var x = (screenW - totalWidth) / 2;
 
         var currentX = x;
         var isBar = true;
@@ -92,6 +97,7 @@ class BarcodeMode128 {
             isBar = !isBar;
         }
     }
+
     private function charToCode128(char as String) as Number {
         var c = char.toCharArray()[0];
         var value = c.toNumber();
@@ -106,12 +112,27 @@ class BarcodeMode128 {
     }
 
     function getPattern(code as Number) {
-        // Minimal fallback (you MUST expand later)
         if (code < CODE128_PATTERNS.size()) {
             return CODE128_PATTERNS[code];
         }
 
-        // fallback pattern (temporary)
+        // fallback pattern 0
+        System.println("Invalid code: " + code);
         return [2, 1, 2, 2, 2, 2];
+    }
+
+    //https://en.wikipedia.org/wiki/Code_128#Check_digit_calculation
+    function createChecksum() as Number {
+        var checksum = 104; // start value
+
+        // Calculate checksum using weighted sum
+        for (var i = 0; i < _data.length(); i++) {
+            var char = _data.substring(i, i + 1);
+            checksum += charToCode128(char) * (i + 1);
+        }
+
+        // get remainder of division by 103
+        checksum = checksum % 103;
+        return checksum;
     }
 }
